@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 
 
 CREATE DATABASE asyncTask;
 
 USE asyncTask;
 
+=======
+CREATE DATABASE asyncTask;
+USE asyncTask;
+>>>>>>> 3838adfbeb8132121e26e8cde3be5e0de286716f
 create table BBS(
 	num int primary key,
 	id varchar(40),
