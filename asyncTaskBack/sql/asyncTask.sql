@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-
-
 CREATE DATABASE asyncTask;
 
 USE asyncTask;
 
-=======
-CREATE DATABASE asyncTask;
-USE asyncTask;
->>>>>>> 3838adfbeb8132121e26e8cde3be5e0de286716f
 create table BBS(
 	num int primary key,
 	id varchar(40),
@@ -55,7 +48,6 @@ insert into BBS values ((select IFNULL(max(num),0)+1 from BBS a),'test5','sub2',
 insert into BBS values ((select IFNULL(max(num),0)+1 from BBS a),'test6','sub2','content6',0,(select IFNULL(max(num),0)+1 from BBS a),0,0,now());
 insert into BBS values ((select IFNULL(max(num),0)+1 from BBS a),'test7','sub2','content7',0,(select IFNULL(max(num),0)+1 from BBS a),0,0,now());
 insert into BBS values ((select IFNULL(max(num),0)+1 from BBS a),'test8','sub2','content8',0,(select IFNULL(max(num),0)+1 from BBS a),0,0,now());
-commit;
 
 
 
