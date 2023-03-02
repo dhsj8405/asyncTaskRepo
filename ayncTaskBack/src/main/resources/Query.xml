@@ -165,7 +165,7 @@
 	
 	<select id="selectMaxCnt" parameterClass="com.bit.model.BbsDto" resultClass="int">
 		SELECT CEIL(count(*)/#limit#) 
-		  FROM board 
+		  FROM BBS 
 		 where 1=1
 		 <isEqual property="srhKey" compareValue="sub">
         	 and sub like concat('%',#srhWord#,'%')
