@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<!-- <select id="selectAll" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
+		select num
+			 , sub 
+			 , id
+			 , cnt
+			 , content
+			 , reg_date regDate
+		  from board
+		 where 1=1
+		 <isEqual property="srhKey" compareValue="sub">
+        	 and sub like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 <isEqual property="srhKey" compareValue="id">
+        	 and id like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 order by reg_date desc
+		 LIMIT #limit# 
+		 OFFSET #offset# 
+	</select>
+	
+	<insert id="insertOne" parameterClass="com.bit.model.BbsDto">
+		<selectKey keyProperty="num" resultClass="Integer">
+				select IfNULL(max(num),0)+1 from board
+		</selectKey>
+		insert into board
+		values
+		( 
+		       #num#
+			 , #id#
+			 , #sub#
+			 , #content#
+			 , 0
+			 , now()
+		)
+	</insert>
+	
+	<select id="selectOne" parameterClass="int" resultClass="com.bit.model.BbsDto">
+		select num
+			 , sub 
+			 , id
+			 , cnt
+			 , content
+			 , reg_date regDate 
+		  from board
+		 where num = #val# 
+	</select>
+	
+	<update id="updateCnt" parameterClass="int">
+		update board
+		   set cnt = cnt+1
+		 where num = #num# 
+	</update>
+	
+	
+	<select id="selectMaxCnt" parameterClass="com.bit.model.BbsDto" resultClass="int">
+		SELECT CEIL(count(*)/#limit#) 
+		  FROM board 
+		 where 1=1
+		 <isEqual property="srhKey" compareValue="sub">
+        	 and sub like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 <isEqual property="srhKey" compareValue="id">
+        	 and id like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 
+	</select>
+	
+	<update id="updateOne" parameterClass="com.bit.model.BbsDto">
+		update board 
+		   set id=#id#, sub=#sub#, content=#content# 
+		 where num = #num# 
+	</update>
+	 
+	<delete id="deleteOne" parameterClass="int">
+		delete 
+		  from board 
+		 where num = #val# 
+	</delete>
+	<select id="selectReply" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
+		select num
+			 , ref
+			 , seq
+			 , lvl
+			 , id
+			 , content
+			 , reg_date regDate
+			 , board_num
+		  from reply
+		 where board_num=#num#
+		 order by ref desc, seq asc
+		 LIMIT #limit# 
+		 OFFSET #offset# 
+	</select> -->
+	
+	
+	
+	<select id="selectAll" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
+		select num
+			 , ref
+			 , seq
+			 , lvl
+			 , sub 
+			 , id
+			 , cnt
+			 , content
+			 , reg_date regDate
+		  from BBS
+		 where 1=1
+		 <isEqual property="srhKey" compareValue="sub">
+        	 and sub like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 <isEqual property="srhKey" compareValue="id">
+        	 and id like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 order by ref desc, seq asc
+		 LIMIT #limit# 
+		 OFFSET #offset# 
+	</select>
+ 
+ 
+  	
+	<insert id="insertOne" parameterClass="com.bit.model.BbsDto">
+		<selectKey keyProperty="num" resultClass="Integer">
+				select IfNULL(max(num),0)+1 from BBS 
+		</selectKey>
+		insert into BBS
+		values
+		( 
+		       #num#
+			 , #id#
+			 , #sub#
+			 , #content#
+			 , 0
+			 , #num#
+			 , 0
+			 , 0
+			 , now()
+		)
+	</insert>
+	
+	<select id="selectOne" parameterClass="int" resultClass="com.bit.model.BbsDto">
+		select num
+			 , ref
+			 , seq
+			 , lvl
+			 , sub 
+			 , id
+			 , cnt
+			 , content
+			 , reg_date regDate 
+		  from BBS
+		 where num = #val# 
+	</select>
+	
+	<update id="updateCnt" parameterClass="int">
+		update BBS 
+		   set cnt = cnt+1
+		 where num = #num# 
+	</update>
+	
+	
+	<select id="selectMaxCnt" parameterClass="com.bit.model.BbsDto" resultClass="int">
+		SELECT CEIL(count(*)/#limit#) 
+		  FROM board 
+		 where 1=1
+		 <isEqual property="srhKey" compareValue="sub">
+        	 and sub like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 <isEqual property="srhKey" compareValue="id">
+        	 and id like concat('%',#srhWord#,'%')
+		 </isEqual>
+		 
+	</select>
+	
+	<update id="updateOne" parameterClass="com.bit.model.BbsDto">
+		update BBS 
+		   set id=#id#, sub=#sub#, content=#content# 
+		 where num = #num# 
+	</update>
+	 
+	<delete id="deleteOne" parameterClass="int">
+		delete 
+		  from BBS 
+		 where num = #val# 
+	</delete>
+</sqlMap>
