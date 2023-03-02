@@ -2,6 +2,7 @@ package com.bit.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class BbsDto {
 	private int num,ref,seq,lvl;
@@ -11,6 +12,7 @@ public class BbsDto {
 	private String content;
 	private Date regDate;
 	
+	private List<ReplyDto> replyList;
 	//검색영역 
 	private int limit,nowPage,offset;
 	private String srhKey,srhWord;
@@ -132,6 +134,13 @@ public class BbsDto {
 	}
 	public void setOffset(int offset) {
 		this.offset = offset;
+	}
+	
+	public List<ReplyDto> getReplyList() {
+		return replyList;
+	}
+	public void setReplyList(List<ReplyDto> replyList) {
+		this.replyList = replyList;
 	}
 	@Override
 	public int hashCode() {

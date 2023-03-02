@@ -3,7 +3,7 @@
 
 <sqlMap>
 
-	<!-- <select id="selectAll" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
+<!-- 	<select id="selectAll" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
 		select num
 			 , sub 
 			 , id
@@ -95,10 +95,10 @@
 		 order by ref desc, seq asc
 		 LIMIT #limit# 
 		 OFFSET #offset# 
-	</select> -->
+	</select> 
+ -->
 	
-	
-	
+  	
 	<select id="selectAll" parameterClass="com.bit.model.BbsDto" resultClass="com.bit.model.BbsDto">
 		select num
 			 , ref
@@ -123,7 +123,6 @@
 	</select>
  
  
-  	
 	<insert id="insertOne" parameterClass="com.bit.model.BbsDto">
 		<selectKey keyProperty="num" resultClass="Integer">
 				select IfNULL(max(num),0)+1 from BBS 
@@ -187,5 +186,5 @@
 		delete 
 		  from BBS 
 		 where num = #val# 
-	</delete>
+	</delete> 
 </sqlMap>
