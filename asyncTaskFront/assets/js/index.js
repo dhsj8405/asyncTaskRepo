@@ -1,6 +1,6 @@
 
 var tmp,params,bbsList = [],bbs;
-var startPage,endPage,nowPage=1,pageCnt=3,limit=3,maxCnt;		//페이징 변수들
+var startPage,endPage,nowPage=1,pageCnt=3,limit=5,maxCnt;		//페이징 변수들
 var srhForm,srhKey,srhWord;										//검색 변수들
 var viewMode = "R"		//R:읽기 U:수정  I:쓰기
 var ajaxErrMsg = "네트워크 오류입니다. 잠시후 다시 시도해주세요.";
@@ -89,6 +89,18 @@ $(function(){
 		    	console.log("dddd")
 		    	//$('#confirm-popup').show()
 		    })
+			// 5개,10개보기
+			$('#main-page .limit-btn-5').on('click',function(e){
+		    	e.preventDefault();
+				limit = 5;
+				getList();
+		    })
+			$('#main-page .limit-btn-10').on('click',function(e){
+		    	e.preventDefault();
+				limit = 10;
+				getList();
+		    	
+		    })
 	    //삭제 확정 팝업 
 		    //삭제 확정 팝업 삭제클릭시
 		    $('#confirm-popup .btn-box a[name="del-btn"]').on('click',function(e){
@@ -121,12 +133,13 @@ function getList(){
 	console.log("??")
 	
 	$.ajax({
-        url:'http://localhost:8080/asyncTask/api/list.do'
+        url:'http://localhost:6060/asyncTask/api/list.do'
         ,type:'get'
         ,data: params
         ,dataType:"json"
         ,success:function(resp){
 			console.log("응답")
+			console.log(resp)
         	if(resp.result == "SUCCESS"){
         		bbsList = resp.data;
         		maxCnt = parseInt(resp.strData);
@@ -146,7 +159,7 @@ function getOne(bbsNum){
 	$('#content #bbs-modal .frame table  tr td input').attr("readonly", true); 
 	$('#content #bbs-modal .frame table  tr td textarea').attr("readonly", true); 
 	$.ajax({
-        url:'http://127.0.0.1:8080/asyncTask/api/detail.do'
+        url:'http://127.0.0.1:6060/asyncTask/api/detail.do'
         ,type:'get'
         ,dataType: "json"
         ,data: "bbsNum="+bbsNum
@@ -183,7 +196,7 @@ function updateOne(){
 	}
 	if(viewMode == "U")params.num = bbs.num ;
     $.ajax({
-        url:"http://127.0.0.1:8080/asyncTask/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
+        url:"http://127.0.0.1:6060/asyncTask/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
         // ,type:'post'
 		,type: 'post'
         ,dataType: "json"
@@ -208,7 +221,7 @@ function updateOne(){
 //삭제
 function deleteOne(bbsNum){
 	$.ajax({
-        url:'http://127.0.0.1:8080/asyncTask/api/delete.do'
+        url:'http://127.0.0.1:6060/asyncTask/api/delete.do'
         ,type:'get'
         ,dataType: "json"
         ,data: {num : bbs.num}
