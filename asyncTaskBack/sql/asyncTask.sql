@@ -1,4 +1,8 @@
-CREATE DATABASE asyncTask
+
+
+CREATE DATABASE asyncTask;
+
+USE asyncTask;
 
 create table BBS(
 	num int primary key,
