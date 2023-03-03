@@ -133,7 +133,7 @@ function getList(){
 	console.log("??")
 	
 	$.ajax({
-        url:'http://localhost:8080/api/list.do'
+        url:'http://192.168.99.100:8080/api/list.do'
         ,type:'get'
         ,data: params
         ,dataType:"json"
