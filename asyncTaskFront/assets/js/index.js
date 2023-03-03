@@ -221,7 +221,7 @@ function updateOne(){
 //삭제
 function deleteOne(bbsNum){
 	$.ajax({
-        url:'http://127.0.0.1:6060/asyncTask/api/delete.do'
+        url:'http://127.0.0.1:6060/api/delete.do'
         ,type:'get'
         ,dataType: "json"
         ,data: {num : bbs.num}
