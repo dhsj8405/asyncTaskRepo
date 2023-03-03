@@ -133,7 +133,7 @@ function getList(){
 	console.log("??")
 	
 	$.ajax({
-        url:'http://localhost:6060/asyncTask/api/list.do'
+        url:'http://localhost:6060/api/list.do'
         ,type:'get'
         ,data: params
         ,dataType:"json"
@@ -159,7 +159,7 @@ function getOne(bbsNum){
 	$('#content #bbs-modal .frame table  tr td input').attr("readonly", true); 
 	$('#content #bbs-modal .frame table  tr td textarea').attr("readonly", true); 
 	$.ajax({
-        url:'http://127.0.0.1:6060/asyncTask/api/detail.do'
+        url:'http://127.0.0.1:6060/api/detail.do'
         ,type:'get'
         ,dataType: "json"
         ,data: "bbsNum="+bbsNum
@@ -196,7 +196,7 @@ function updateOne(){
 	}
 	if(viewMode == "U")params.num = bbs.num ;
     $.ajax({
-        url:"http://127.0.0.1:6060/asyncTask/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
+        url:"http://127.0.0.1:6060/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
         // ,type:'post'
 		,type: 'post'
         ,dataType: "json"
