@@ -265,7 +265,7 @@ function drawBbsList(localBbsList){
 	    $('.bbs-row').on('click',function(e){
 			getOne($(e.target).parent().children().first().html());
 		})	
-}
+} 
 
 // 메인 페이지의 페이징 부분 그리기
 function drawPaging(){
