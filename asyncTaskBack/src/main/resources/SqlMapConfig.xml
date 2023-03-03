@@ -5,7 +5,7 @@
 	<transactionManager type="jdbc">
 		<dataSource type="SIMPLE">
 			<property name="JDBC.Driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="JDBC.ConnectionURL" value="jdbc:mysql://127.0.0.1:33006/asyncTask"/>
+			<property name="JDBC.ConnectionURL" value="jdbc:mysql://127.0.0.1:3306/asyncTask"/>
 			<property name="JDBC.Username" value="scott"/>
 			<property name="JDBC.Password" value="tiger"/>
 		</dataSource>
