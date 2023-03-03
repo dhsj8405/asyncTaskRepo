@@ -159,7 +159,7 @@ function getOne(bbsNum){
 	$('#content #bbs-modal .frame table  tr td input').attr("readonly", true); 
 	$('#content #bbs-modal .frame table  tr td textarea').attr("readonly", true); 
 	$.ajax({
-        url:'http://192.168.99.100:8080/api/detail.do'
+        url:'http://127.0.0.1:8080/api/detail.do'
         ,type:'get'
         ,dataType: "json"
         ,data: "bbsNum="+bbsNum
