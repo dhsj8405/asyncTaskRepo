@@ -37,7 +37,7 @@ $(function(){
 	        // 검색어 입력후 엔터시 리스트 조회
 	        if(e.keyCode == 13 && $(srhForm).find(".word-span").find("input[name='word']").val() != ""){
 	        	e.preventDefault();
-	        	getList();
+	        	getList(); 
 	        }
 	    });
 	    
