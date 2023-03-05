@@ -48,7 +48,7 @@ public class BbsDao {
 			e.printStackTrace();
 			apiResult.setResult("FAIL");
 // 			apiResult.setResultMsg("조회에 실패했습니다");
-			apiResult.setResultMsg(e);
+			apiResult.setResultMsg(e+"");
 		}
 		return  apiResult;
 	}
