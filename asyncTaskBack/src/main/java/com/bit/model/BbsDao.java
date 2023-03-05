@@ -42,7 +42,7 @@ public class BbsDao {
 			}else {
 				apiResult.setResult("FAIL");
 				//apiResult.setResultMsg("조회에 실패했습니다");	
-				apiResult.setResultMsg("조회 실패);	
+				apiResult.setResultMsg("조회 실패");	
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
