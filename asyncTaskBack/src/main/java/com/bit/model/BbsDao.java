@@ -41,12 +41,14 @@ public class BbsDao {
 				apiResult.setResult("SUCCESS");	
 			}else {
 				apiResult.setResult("FAIL");
-				apiResult.setResultMsg("조회에 실패했습니다");	
+				//apiResult.setResultMsg("조회에 실패했습니다");	
+				apiResult.setResultMsg(apiResult);	
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			apiResult.setResult("FAIL");
-			apiResult.setResultMsg("조회에 실패했습니다");
+// 			apiResult.setResultMsg("조회에 실패했습니다");
+			apiResult.setResultMsg(e);
 		}
 		return  apiResult;
 	}
