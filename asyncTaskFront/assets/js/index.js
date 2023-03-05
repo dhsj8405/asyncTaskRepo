@@ -163,6 +163,7 @@ function getOne(bbsNum){
         ,dataType: "json"
         ,data: "bbsNum="+bbsNum
         ,success:function(resp){
+		console.log(resp)
         	if(resp.result == "SUCCESS"){
         		viewMode="R";
         		bbs = resp.data[0] 
