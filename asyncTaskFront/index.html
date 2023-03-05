@@ -126,7 +126,7 @@ function getList(){
 			limit: limit,
 			nowPage : nowPage
 	}
-	console.log("??")
+	
 	
 	$.ajax({
         url:'http://localhost:8080/asyncTask/api/list.do'
@@ -134,7 +134,7 @@ function getList(){
         ,data: params
         ,dataType:"json"
         ,success:function(resp){
-			console.log("응답")
+			console.log(resp)
         	if(resp.result == "SUCCESS"){
         		bbsList = resp.data;
         		maxCnt = parseInt(resp.strData);
