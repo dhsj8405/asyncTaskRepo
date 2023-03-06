@@ -132,7 +132,7 @@ function getList(){
 	}
 	
 	$.ajax({
-        url:'http://192.168.99.100:8080/api/list.do'
+        url:'http://127.0.0.1:8080/api/list.do'
         ,type:'get'
         ,data: params
         ,dataType:"json"
@@ -158,7 +158,7 @@ function getOne(bbsNum){
 	$('#content #bbs-modal .frame table  tr td input').attr("readonly", true); 
 	$('#content #bbs-modal .frame table  tr td textarea').attr("readonly", true); 
 	$.ajax({
-        url:'http://192.168.99.100:8080/api/detail.do'
+        url:'http://127.0.0.1:8080/api/detail.do'
         ,type:'get'
         ,dataType: "json"
         ,data: "bbsNum="+bbsNum
@@ -196,7 +196,7 @@ function updateOne(){
 	}
 	if(viewMode == "U")params.num = bbs.num ;
     $.ajax({
-        url:"http://192.168.99.100:8080/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
+        url:"http://127.0.0.1:8080/" +(viewMode == "I" ? 'api/insert.do' : 'api/update.do')
         // ,type:'post'
 		,type: 'post'
         ,dataType: "json"
@@ -221,7 +221,7 @@ function updateOne(){
 //삭제
 function deleteOne(bbsNum){
 	$.ajax({
-        url:'http://192.168.99.100:8080/api/delete.do'
+        url:'http://127.0.0.1:8080/api/delete.do'
         ,type:'get'
         ,dataType: "json"
         ,data: {num : bbs.num}
